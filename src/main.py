@@ -1,16 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask('Job Search in Flask')
 
 
 @app.route('/')
 def home():
-    return 'Hello, welcome to the root!'
-
-
-@app.route('/contact')
-def contact():
-    return 'Contact me!'
+    return render_template('home.html')
 
 
 app.run(host='0.0.0.0')
