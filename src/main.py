@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask('Job Search in Flask')
 
@@ -6,6 +6,12 @@ app = Flask('Job Search in Flask')
 @app.route('/')
 def home():
     return render_template('home.html')
+
+
+@app.route('/result')
+def result():
+    word = request.args.get('word')
+    return render_template('result.html', searching=word)
 
 
 app.run(host='0.0.0.0')
