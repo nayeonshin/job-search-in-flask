@@ -9,9 +9,12 @@ def _extract_last_page_num(url):
     """
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
-    page_elements = soup.find('div', class_='s-pagination').find_all('a')
-    last_page_num = page_elements[-2].get_text(strip=True)  # Excludes 'next'
-    return int(last_page_num)
+    page_elements = soup.find('div', class_='s-pagination')
+    if page_elements:
+        page_elements = page_elements.find_all('a')
+        last_page_num = page_elements[-2].get_text(strip=True)  # Excludes 'next'
+        return int(last_page_num)
+    return 0
 
 
 def _extract_job(html):
