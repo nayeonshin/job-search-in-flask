@@ -56,8 +56,7 @@ def export():
         if jobs:
             save_to_file(jobs)
             return send_file('Python-Jobs.csv')
-        else:
-            raise Exception()
+        raise Exception()
     except AttributeError:
         return redirect('/')
 
