@@ -28,9 +28,11 @@ def result():
     else:
         return redirect('/')
     return render_template('result.html',
-                           searching=word,
+                           searching=word.capitalize(),
                            result_num=len(jobs),
-                           jobs=jobs)
+                           jobs=jobs,
+                           can_export=True if len(jobs) > 0 else False
+                           )
 
 
 @app.route('/export')
@@ -43,13 +45,11 @@ def export():
         else:
             raise NoInputError
         if jobs:
-            save_to_file(jobs)
-            return send_file('Python-Jobs.csv')
-        raise NoResultError
+            capitalized_word = word.capitalize()
+            save_to_file(jobs, capitalized_word)
+            return send_file(f'{capitalized_word}-Jobs.csv')
     except NoInputError:
         return redirect('/')
-    except NoResultError:
-        return redirect(f'/result?word={word}')
 
 
 app.run(host='0.0.0.0')

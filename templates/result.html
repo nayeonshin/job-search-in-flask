@@ -18,9 +18,11 @@
     <button>
       <a href="/">Go back</a>
     </button>
+    {% if can_export %}
     <button>
       <a href="/export?word={{ searching }}">Export to CSV</a>
     </button>
+    {% endif %}
     <section>
       <h4>Title</h4>
       <h4>Company</h4>
