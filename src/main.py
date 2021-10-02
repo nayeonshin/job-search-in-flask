@@ -16,9 +16,9 @@ def result():
     word = request.args.get('word')
     if word:
         word = word.lower()
-        from_db = db.get(word)
-        if from_db:
-            jobs = from_db
+        existing_jobs = db.get(word)
+        if existing_jobs:
+            jobs = existing_jobs
         else:
             jobs = get_jobs(word)
             db[word] = jobs
@@ -26,7 +26,8 @@ def result():
         return redirect('/')
     return render_template('result.html',
                            searching=word,
-                           result_num=len(jobs)
+                           result_num=len(jobs),
+                           jobs=jobs
                            )
 
 
