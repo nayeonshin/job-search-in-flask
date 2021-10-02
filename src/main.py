@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask,  redirect, render_template, request, send_file
+
+from exporter import *
 from scraper import get_jobs
 
 app = Flask('Job Search in Flask')
@@ -8,11 +10,19 @@ db = {}
 
 @app.route('/')
 def home():
+    """
+    Render the homepage
+    :return: str
+    """
     return render_template('home.html')
 
 
 @app.route('/result')
 def result():
+    """
+    Show the search's result page
+    :return: Response or str
+    """
     word = request.args.get('word')
     if word:
         word = word.lower()
@@ -32,6 +42,10 @@ def result():
 
 @app.route('/export')
 def export():
+    """
+    Allow exporting result into a CSV file
+    :return: Response
+    """
     try:
         word = request.args.get('word')
         if word:
@@ -40,8 +54,10 @@ def export():
         else:
             raise Exception()
         if jobs:
-            return f'Generate CSV for {word}'
-        raise Exception()
+            save_to_file(jobs)
+            return send_file('Python-Jobs.csv')
+        else:
+            raise Exception()
     except AttributeError:
         return redirect('/')
 
