@@ -11,11 +11,19 @@ db = {}
 
 @app.route('/')
 def home():
+    """
+    Render the homepage
+    :return: str
+    """
     return render_template('home.html')
 
 
 @app.route('/result')
 def result():
+    """
+    Show the search's result page
+    :return: Response or str
+    """
     word = request.args.get('word')
     if word:
         word = word.lower()
@@ -37,6 +45,10 @@ def result():
 
 @app.route('/export')
 def export():
+    """
+    Allow exporting result into a CSV file
+    :return: Response
+    """
     try:
         word = request.args.get('word')
         if word:
