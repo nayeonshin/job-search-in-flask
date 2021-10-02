@@ -15,7 +15,12 @@
   <body>
     <h1>Search Results</h1>
     <h3>Found {{ result_num }} results for: {{ searching }}</h3>
-    <a href="/export?word={{ searching }}">Export to CSV</a>
+    <button>
+      <a href="/">Go back</a>
+    </button>
+    <button>
+      <a href="/export?word={{ searching }}">Export to CSV</a>
+    </button>
     <section>
       <h4>Title</h4>
       <h4>Company</h4>

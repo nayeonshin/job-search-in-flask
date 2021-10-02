@@ -1,5 +1,6 @@
 from flask import Flask,  redirect, render_template, request, send_file
 
+from exceptions import *
 from exporter import *
 from scraper import get_jobs
 
@@ -10,19 +11,11 @@ db = {}
 
 @app.route('/')
 def home():
-    """
-    Render the homepage
-    :return: str
-    """
     return render_template('home.html')
 
 
 @app.route('/result')
 def result():
-    """
-    Show the search's result page
-    :return: Response or str
-    """
     word = request.args.get('word')
     if word:
         word = word.lower()
@@ -42,23 +35,21 @@ def result():
 
 @app.route('/export')
 def export():
-    """
-    Allow exporting result into a CSV file
-    :return: Response
-    """
     try:
         word = request.args.get('word')
         if word:
             word = word.lower()
             jobs = db.get(word)
         else:
-            raise Exception()
+            raise NoInputError
         if jobs:
             save_to_file(jobs)
             return send_file('Python-Jobs.csv')
-        raise Exception()
-    except AttributeError:
+        raise NoResultError
+    except NoInputError:
         return redirect('/')
+    except NoResultError:
+        return redirect(f'/result?word={word}')
 
 
 app.run(host='0.0.0.0')
