@@ -4,25 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Job Search</title>
-    <style>
-      section {
-        display: grid;
-        gap: 20px;
-        grid-template-columns: repeat(4, 1fr);
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='result.css') }}"
+    />
   </head>
   <body>
     <h1>Search Results</h1>
     <h3>Found {{ result_num }} results for: {{ searching }}</h3>
-    <button>
+    <div>
       <a href="/">Go back</a>
-    </button>
-    {% if can_export %}
-    <button>
+      {% if can_export %}
       <a href="/export?word={{ searching }}">Export to CSV</a>
-    </button>
-    {% endif %}
+      {% endif %}
+    </div>
     <section>
       <h4>Title</h4>
       <h4>Company</h4>

@@ -1,0 +1,18 @@
+@import "style.css";
+
+div a {
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 2px;
+  text-decoration: none;
+}
+
+div a:nth-child(2) {
+  margin-left: 5px;
+}
+
+section {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
