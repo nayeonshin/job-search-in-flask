@@ -27,8 +27,23 @@ def result():
     return render_template('result.html',
                            searching=word,
                            result_num=len(jobs),
-                           jobs=jobs
-                           )
+                           jobs=jobs)
+
+
+@app.route('/export')
+def export():
+    try:
+        word = request.args.get('word')
+        if word:
+            word = word.lower()
+            jobs = db.get(word)
+        else:
+            raise Exception()
+        if jobs:
+            return f'Generate CSV for {word}'
+        raise Exception()
+    except AttributeError:
+        return redirect('/')
 
 
 app.run(host='0.0.0.0')
