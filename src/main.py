@@ -1,6 +1,6 @@
 from flask import Flask,  redirect, render_template, request, send_file
 
-from exceptions import *
+from exception import *
 from exporter import *
 from scraper import get_jobs
 
