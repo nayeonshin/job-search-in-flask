@@ -4,7 +4,7 @@ Job Search in Flask is a Stack Overflow job scraper in Flask.
 
 ## Features
 
-### Search
+### 1. Search
 
 #### Homepage
 
@@ -16,15 +16,19 @@ Job Search in Flask is a Stack Overflow job scraper in Flask.
 
 ![Django result page](https://github.com/nayeonshin/job-search-in-flask/blob/main/assets/django-result.png)
 
+---
+
 **Reactjs**
 
 ![Reactjs result](https://github.com/nayeonshin/job-search-in-flask/blob/main/assets/reactjs-result.png)
 
-### Export result to a CSV file
+### 2. Export result to a CSV file
 
 **Django**
 
 ![Django CSV](https://github.com/nayeonshin/job-search-in-flask/blob/main/assets/django-csv.png)
+
+---
 
 **Reactjs**
 
