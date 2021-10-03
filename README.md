@@ -1,16 +1,16 @@
 # [Job Search in Flask](https://job-search-in-flask.herokuapp.com/)
 
-Job Search in Flask is a Stack Overflow job scraper in Flask.
+Job Search in Flask is a Stack Overflow job scraper and search in Flask.
 
 ## Features
 
 ### 1. Search
 
-#### Homepage
+- Homepage
 
 ![Homepage](https://github.com/nayeonshin/job-search-in-flask/blob/main/assets/home.png)
 
-#### Result pages
+- Result pages
 
 **Django**
 
