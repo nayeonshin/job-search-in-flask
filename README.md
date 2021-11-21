@@ -9,13 +9,13 @@ Note: I stopped maintaining this project on October 26, 2021. (i.e. The scraper 
 
 - Homepage
 
-  ![Homepage](https://github.com/nayeonshin/job-search-in-flask/blob/main/assets/home.png)
+  ![Homepage](/assets/home.png)
 
 - Result pages
 
   **Django**
 
-  ![Django result page](https://github.com/nayeonshin/job-search-in-flask/blob/main/assets/django-result.png)
+  ![Django result page](/assets/django-result.png)
 
   ---
 
@@ -33,5 +33,5 @@ Note: I stopped maintaining this project on October 26, 2021. (i.e. The scraper 
 
 **Reactjs**
 
-![Reactjs CSV](https://github.com/nayeonshin/job-search-in-flask/blob/main/assets/reactjs-csv.png)
+![Reactjs CSV](/assets/reactjs-csv.png)
 
