@@ -21,13 +21,13 @@ I stopped maintaining this project on October 26, 2021. (i.e. The scraper and se
 
   **Reactjs**
 
-  ![Reactjs result](https://github.com/nayeonshin/job-search-in-flask/blob/main/assets/reactjs-result.png)
+  ![Reactjs result](assets/reactjs-result.png)
 
-### 2. Export result to a CSV file
+### 2. Export result to a CSV file.
 
 **Django**
 
-![Django CSV](https://github.com/nayeonshin/job-search-in-flask/blob/main/assets/django-csv.png)
+![Django CSV](assets/django-csv.png)
 
 ---
 
