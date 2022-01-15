@@ -1,5 +1,5 @@
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
 
 
 def _extract_last_page_num(url) -> int:
@@ -15,8 +15,7 @@ def _extract_last_page_num(url) -> int:
 
 
 def _extract_job(html):
-    """
-    Get a dictionary of a job's information
+    """Get a dictionary of a job's information
     :param html: Tag
     :return: dict[str, str]
     """
@@ -38,8 +37,7 @@ def _extract_job(html):
 
 
 def _extract_jobs(last_page_num, url):
-    """
-    Get a list of job info's dictionaries
+    """Get a list of job info's dictionaries
     :param last_page_num: int
     :return: list[dict[str, str]]
     """
@@ -60,8 +58,7 @@ def _extract_jobs(last_page_num, url):
 
 
 def get_jobs(word):
-    """
-    Extract jobs until the last page
+    """Extract jobs until the last page
     :param word: str
     :return: list[dict[str, str]]
     """

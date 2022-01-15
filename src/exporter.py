@@ -2,8 +2,7 @@ import csv
 
 
 def save_to_file(jobs, word):
-    """
-    Write list jobs into csv
+    """Write list jobs into csv
     :param jobs: list[dict[str, str]]
     :param word: str
     :return: None

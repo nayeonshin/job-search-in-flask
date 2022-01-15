@@ -17,8 +17,7 @@ def home() -> str:
 
 @app.route("/result")
 def result():
-    """
-    Show the search's result page
+    """Show the search's result page
     :return: Response or str
     """
     word = request.args.get("word")
@@ -43,8 +42,7 @@ def result():
 
 @app.route("/export")
 def export():
-    """
-    Allow exporting result into a CSV file
+    """Allow exporting result into a CSV file
     :return: Response
     """
     try:
